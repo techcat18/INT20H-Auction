@@ -1,7 +1,9 @@
 ﻿using System.Linq.Expressions;
 using System.Net;
 using Auction.API.Common.Constants;
+using Auction.API.Data.Interfaces;
 using Auction.API.Domain;
+using Auction.API.Domain.Entities;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Linq;
 
@@ -136,17 +138,13 @@ public abstract class GenericRepository<TEntity>
             cancellationToken: cancellationToken);
     }
 
-    #region Private methods
-
-    private static void SetAuditProperties(TEntity entity)
+    #region Protected methods
+    
+    protected static void SetAuditProperties(TEntity entity)
     {
         entity.CreatedAt ??= DateTime.UtcNow;
         entity.ModifiedAt = DateTime.UtcNow;
     }
-
-    #endregion
-
-    #region Protected methods
     
     protected static void SetId(TEntity entity)
     {
