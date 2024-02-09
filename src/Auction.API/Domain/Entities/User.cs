@@ -4,10 +4,8 @@ using Newtonsoft.Json;
 
 namespace Auction.API.Domain.Entities;
 
-public class User
+public class User : BaseEntity
 {
-    [JsonProperty("UserId")]
-    public string Id { get; set; }
 
     [JsonRequired]
     [JsonProperty("username")]
