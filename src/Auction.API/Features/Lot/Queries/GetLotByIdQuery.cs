@@ -3,6 +3,7 @@ using MediatR;
 
 namespace Auction.API.Features.Lot.Queries;
 
-public record GetLotsQuery: IRequest<IEnumerable<LotDto>>
+public record GetLotByIdQuery : IRequest<LotDto>
 {
+    public string Id { get; set; }
 }
