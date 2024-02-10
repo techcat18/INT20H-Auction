@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.API.Features.Bid;
 
-public static class CreateLotFeature
+public static class CreateBidFeature
 {
     internal sealed class Handler : IRequestHandler<CreateBidCommand, BidDto>
     {
@@ -34,7 +34,7 @@ public static class CreateLotFeature
         }
     }
 
-    public class CreateLotEndpoint : ICarterModule
+    public class CreateBidEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
