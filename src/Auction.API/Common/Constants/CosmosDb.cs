@@ -10,6 +10,7 @@ public static partial class Constants
         {
             public const string Auction = "auction";
             public const string Users = "users";
+            public const string Chats = "chats";
         }
     }
 }

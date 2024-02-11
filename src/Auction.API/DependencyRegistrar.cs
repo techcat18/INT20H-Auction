@@ -15,6 +15,8 @@ public static class DependencyRegistrar
         services.AddScoped<ILotRepository, LotRepository>();
         services.AddScoped<IBidRepository, BidRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
+        services.AddScoped<IChatRepository, ChatRepository>();
+        services.AddScoped<IMessageRepository, MessageRepository>();
     }
 
     public static void ConfigureCosmosDbClient(
