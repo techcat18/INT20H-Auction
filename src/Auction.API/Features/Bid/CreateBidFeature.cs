@@ -1,5 +1,6 @@
 using Auction.API.Common.Constants;
 using Auction.API.Common.DTOs;
+using Auction.API.Common.DTOs.Requests.Bid;
 using Auction.API.Data.Interfaces;
 using Auction.API.Features.Bid.Commands;
 using AutoMapper;
@@ -28,7 +29,7 @@ public static class CreateBidFeature
         {
             var bid = _mapper.Map<Domain.Entities.Bid>(command);
 
-            await _bidRepository.CreateAsync(bid, bid.Id, cancellationToken);
+            await _bidRepository.CreateAsync(bid, bid.LotId, cancellationToken);
 
             return _mapper.Map<BidDto>(bid);
         }
@@ -38,10 +39,16 @@ public static class CreateBidFeature
     {
         public void AddRoutes(IEndpointRouteBuilder app)
         {
-            app.MapPost(Constants.ApiEndpoints.Bid.Create,
-                async ([FromBody] CreateBidCommand createBidCommand, ISender sender) =>
+            app.MapPost(Constants.ApiEndpoints.Bid.CreateBid,
+                async ([FromRoute] string id, [FromBody] CreateBidDto dto, ISender sender) =>
                 {
-                    var bid = await sender.Send(createBidCommand);
+                    
+                    var bid = await sender
+                        .Send(new CreateBidCommand
+                        {
+                            Amount = dto.Amount, LotId = id, UserId = dto.UserId
+                        });
+                    
                     return Results.Ok(bid);
                 });
         }

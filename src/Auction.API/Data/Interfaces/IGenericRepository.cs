@@ -19,7 +19,7 @@ public interface IGenericRepository<TEntity> where TEntity: BaseEntity
         CancellationToken cancellationToken = default);
 
     Task CreateAsync(
-        TEntity entity,
+        TEntity entity, 
         string partitionKey,
         CancellationToken cancellationToken = default);
 
