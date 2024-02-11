@@ -20,7 +20,6 @@
       <Folder Include="Common\DTOs\Requests" />
       <Folder Include="Common\DTOs\Responses" />
       <Folder Include="Features\Auth" />
-      <Folder Include="Features\Bid" />
     </ItemGroup>
 
 </Project>

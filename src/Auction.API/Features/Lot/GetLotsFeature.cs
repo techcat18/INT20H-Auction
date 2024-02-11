@@ -1,12 +1,10 @@
 ﻿using Auction.API.Common.Constants;
 using Auction.API.Common.DTOs;
 using Auction.API.Data.Interfaces;
-using Auction.API.Features.Lot.Commands;
 using Auction.API.Features.Lot.Queries;
 using AutoMapper;
 using Carter;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.API.Features.Lot;
 

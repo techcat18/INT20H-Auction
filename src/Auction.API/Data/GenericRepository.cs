@@ -2,7 +2,6 @@
 using System.Net;
 using Auction.API.Common.Constants;
 using Auction.API.Data.Interfaces;
-using Auction.API.Domain;
 using Auction.API.Domain.Entities;
 using Microsoft.Azure.Cosmos;
 using Microsoft.Azure.Cosmos.Linq;

@@ -1,29 +1,26 @@
-using Auction.API.Common.Constants;
-using Auction.API.Domain.Enums;
 using Newtonsoft.Json;
 
 namespace Auction.API.Domain.Entities;
 
 public class User : BaseEntity
 {
-
     [JsonRequired]
-    [JsonProperty("username")]
+    [JsonProperty("userName")]
     public string UserName { get; set; }
 
-    [JsonProperty("firstname")]
+    [JsonProperty("firstName")]
     public string FirstName{ get; set; }
 
-    [JsonProperty("lastname")]
+    [JsonProperty("lastName")]
     public string LastName{ get; set; }
 
     [JsonProperty("email")]
     public string Email { get; set; }
 
     [JsonRequired]
-    [JsonProperty("passwordhash")]
+    [JsonProperty("passwordHash")]
     public string PasswordHash { get; set; }
 
-    [JsonProperty("phonenumber")]
+    [JsonProperty("phoneNumber")]
     public string PhoneNumber { get; set; }
 }
