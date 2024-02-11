@@ -10,6 +10,7 @@ public class LotProfile: Profile
     public LotProfile()
     {
         CreateMap<CreateLotCommand, Lot>();
+        CreateMap<UpsertLotCommand, Lot>();
         CreateMap<Lot, LotDto>();
     }
 }

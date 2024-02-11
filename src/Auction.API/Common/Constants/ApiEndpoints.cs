@@ -14,6 +14,7 @@ public static partial class Constants
             public const string GetById = $"{Base}/{IdPlaceholder}";
             public const string Create = Base;
             public const string Update = $"{Base}/{IdPlaceholder}";
+            public const string Upsert = $"{Base}/{IdPlaceholder}";
             public const string Delete = $"{Base}/{IdPlaceholder}";
         }
     }
