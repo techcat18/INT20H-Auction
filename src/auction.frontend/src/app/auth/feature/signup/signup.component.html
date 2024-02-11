@@ -57,31 +57,6 @@
   </div>
 
   <label
-    for="email"
-    class="signup-container__label"
-  >
-    Enter your home page
-  </label>
-
-  <input
-    id="homePage"
-    type="text"
-    class="signup-container__homePage"
-    formControlName="homePage"
-  >
-
-  <div
-    class="signup-container__error"
-    *ngIf="submitted && homePage!.errors"
-  >
-    <div
-      *ngIf="homePage!.errors['pattern']"
-    >
-      Must be a valid URL
-    </div>
-  </div>
-
-  <label
     for="password"
     class="signup-container__label"
   >
@@ -144,4 +119,11 @@
   >
     Sign Up
   </button>
+
+  <a
+    class="login-container__link"
+    routerLink="/auth/login"
+  >
+    Don't have an account yet?
+  </a>
 </form>

@@ -39,4 +39,10 @@
     color: $color-red;
     margin-bottom: 1rem;
   }
+
+  &__link{
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
 }

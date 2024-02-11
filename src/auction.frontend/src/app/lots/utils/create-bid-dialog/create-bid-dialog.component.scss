@@ -1,0 +1,16 @@
+@import 'variables';
+
+.dialog-container{
+  font-size: 3rem;
+}
+
+button{
+  cursor: pointer;
+  font-size: 3rem;
+  background-color: $color-blue-dark;
+  color: $color-white;
+  border: none;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  margin: 1.5rem;
+}
