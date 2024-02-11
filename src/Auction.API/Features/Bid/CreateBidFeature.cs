@@ -33,7 +33,7 @@ public static class CreateBidFeature
             return _mapper.Map<BidDto>(bid);
         }
     }
-
+    
     public class CreateBidEndpoint : ICarterModule
     {
         public void AddRoutes(IEndpointRouteBuilder app)
@@ -41,7 +41,7 @@ public static class CreateBidFeature
             app.MapPost(Constants.ApiEndpoints.Bid.Create,
                 async ([FromBody] CreateBidCommand createBidCommand, ISender sender) =>
                 {
-                    var Bid = await sender.Send(createBidCommand);
+                    var bid = await sender.Send(createBidCommand);
                     return Results.Ok(bid);
                 });
         }

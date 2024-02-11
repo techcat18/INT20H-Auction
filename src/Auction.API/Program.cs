@@ -11,8 +11,11 @@ builder.Services.ConfigureCosmosDbClient(builder.Configuration);
 builder.Services.ConfigureMediatr();
 builder.Services.ConfigureAutomapper();
 builder.Services.ConfigureCarter();
+builder.Services.ConfigureCors();
 
 var app = builder.Build();
+
+app.UseCors();
 
 //if (app.Environment.IsDevelopment())
 {

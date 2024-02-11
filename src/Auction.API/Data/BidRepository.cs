@@ -31,4 +31,24 @@ public class BidRepository: GenericRepository<Bid>, IBidRepository
 
         return result;
     }
+
+    public async Task<IEnumerable<Bid>> GetByLotIdAsync(
+        string lotId, 
+        CancellationToken cancellationToken = default)
+    {
+        var feedIterator = Container
+            .GetItemLinqQueryable<Bid>()
+            .Where(x => x.LotId == lotId && x.Type == Constants.DbTypes.Bid)
+            .ToFeedIterator();
+
+        var result = new List<Bid>();
+
+        while (feedIterator.HasMoreResults)
+        {
+            var response = await feedIterator.ReadNextAsync(cancellationToken);
+            result.AddRange(response);
+        }
+
+        return result;
+    }
 }

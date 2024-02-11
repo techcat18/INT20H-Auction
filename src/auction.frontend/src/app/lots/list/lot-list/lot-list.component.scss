@@ -1,0 +1,41 @@
+.lots-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 95%;
+  padding: 1.5rem;
+}
+
+.lot {
+  width: 100%;
+  max-width: 37.5rem;
+  border: 0.1rem solid #ccc;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.1);
+}
+
+.lot-content {
+  display: flex;
+  align-items: center;
+}
+
+.lot img {
+  margin-right: 1.25rem;
+  border-radius: 0.25rem;
+}
+
+.lot-details {
+  flex-grow: 1;
+}
+
+.lot h3 {
+  margin-top: 0;
+  margin-bottom: 0.625rem;
+}
+
+.lot p {
+  margin-top: 0;
+  margin-bottom: 0.3125rem;
+}

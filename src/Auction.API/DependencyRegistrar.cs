@@ -53,4 +53,17 @@ public static class DependencyRegistrar
             c.WithModules(modules.ToArray());
         });
     }
+
+    public static void ConfigureCors(this IServiceCollection services)
+    {
+        services.AddCors(options =>
+        {
+            options.AddDefaultPolicy(config =>
+            {
+                config.AllowAnyOrigin();
+                config.AllowAnyHeader();
+                config.AllowAnyMethod();
+            });
+        });
+    }
 }
