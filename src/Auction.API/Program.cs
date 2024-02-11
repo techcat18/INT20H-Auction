@@ -12,6 +12,7 @@ builder.Services.ConfigureMediatr();
 builder.Services.ConfigureAutomapper();
 builder.Services.ConfigureCarter();
 builder.Services.ConfigureCors();
+builder.Services.ConfigureJwtAuth(builder.Configuration);
 
 var app = builder.Build();
 
@@ -24,6 +25,10 @@ app.UseCors();
 }
 
 app.UseRouting();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.UseEndpoints(e => e.MapCarter());
 
 app.Run();
