@@ -1,0 +1,29 @@
+@import 'variables';
+
+.lot-container{
+  font-size: 3rem;
+  margin: 3rem;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  text-align: center;
+
+  &__details{
+
+    &--image{
+      width: 20%;
+    }
+  }
+
+  &__add-bid-btn{
+
+    & > button{
+      cursor: pointer;
+      font-size: 3rem;
+      background-color: $color-blue-dark;
+      color: $color-white;
+      border: none;
+      padding: 1.5rem;
+      border-radius: 1.25rem;
+    }
+  }
+}

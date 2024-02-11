@@ -1,0 +1,18 @@
+<div class="lots-container" *ngIf="lots">
+  <h2>List of Lots</h2>
+  <div class="lot" *ngFor="let lot of lots">
+    <div class="lot-content" (click)="redirectToLotPage(lot.id)">
+      <img [src]="lot.image" alt="{{ lot.name }}" width="100">
+      <div class="lot-details">
+        <h3>{{ lot.name }}</h3>
+        <p>{{ lot.description }}</p>
+        <p>Category: {{ lot.category }}</p>
+        <p>Start Price: {{ lot.startPrice | currency }}</p>
+        <p *ngIf="lot.currentPrice">Current Price: {{ lot.currentPrice | currency }}</p>
+        <p>Status: {{ lot.status }}</p>
+        <p>Start Date: {{ lot.startDate | date }}</p>
+        <p>End Date: {{ lot.endDate | date }}</p>
+      </div>
+    </div>
+  </div>
+</div>

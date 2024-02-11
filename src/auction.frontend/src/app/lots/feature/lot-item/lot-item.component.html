@@ -1,0 +1,23 @@
+<div class="lot-container">
+  <div class="lot-container__details">
+    <h3>{{ lot?.name }}</h3>
+    <img class="lot-container__details--image"[src]="lot?.image" alt="{{ lot?.name }}" width="100">
+    <p>{{ lot?.description }}</p>
+    <p>Category: {{ lot?.category }}</p>
+    <p>Start Price: {{ lot?.startPrice | currency }}</p>
+    <p *ngIf="lot?.currentPrice">Current Price: {{ lot?.currentPrice | currency }}</p>
+    <p>Status: {{ lot?.status }}</p>
+    <p>Start Date: {{ lot?.startDate | date }}</p>
+    <p>End Date: {{ lot?.endDate | date }}</p>
+
+    <div class="lot-container__add-bid-btn">
+      <button (click)="createBid()">Place a bet</button>
+    </div>
+  </div>
+  <div class="lot-container__bids">
+    <p>Bids</p>
+    <div *ngFor="let bid of lot?.bids; index as i">
+      <p>{{i + 1}}. Amount: {{bid.amount}}</p>
+    </div>
+  </div>
+</div>

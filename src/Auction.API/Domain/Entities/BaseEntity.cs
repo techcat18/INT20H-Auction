@@ -1,10 +1,10 @@
 ﻿using Newtonsoft.Json;
 
-namespace Auction.API.Domain;
+namespace Auction.API.Domain.Entities;
 
 public class BaseEntity
 {
-    [System.Text.Json.Serialization.JsonRequired]
+    [JsonRequired]
     [JsonProperty("id")]
     public string Id { get; set; }
     

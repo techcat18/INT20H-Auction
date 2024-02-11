@@ -1,8 +1,8 @@
 ﻿using System.Linq.Expressions;
-using Auction.API.Domain;
+using Auction.API.Domain.Entities;
 using Microsoft.Azure.Cosmos;
 
-namespace Auction.API.Data;
+namespace Auction.API.Data.Interfaces;
 
 public interface IGenericRepository<TEntity> where TEntity: BaseEntity
 {
@@ -19,7 +19,7 @@ public interface IGenericRepository<TEntity> where TEntity: BaseEntity
         CancellationToken cancellationToken = default);
 
     Task CreateAsync(
-        TEntity entity,
+        TEntity entity, 
         string partitionKey,
         CancellationToken cancellationToken = default);
 

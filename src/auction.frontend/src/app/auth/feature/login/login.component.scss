@@ -1,0 +1,46 @@
+@import 'variables';
+
+.login-container{
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: $font-size-default;
+  align-items: center;
+
+  &__label{
+    margin-bottom: 1rem;
+  }
+
+  &__email,
+  &__password{
+    font-size: $font-size-default;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  &__submit-btn{
+    font-size: $font-size-default;
+    padding: .5rem;
+    width: 50%;
+    cursor: pointer;
+    margin-top: 2rem;
+    border-radius: 100px;
+    border: none;
+    background-color: $color-blue-dark;
+    color: $color-white;
+  }
+
+  &__error{
+    color: $color-red;
+    margin-bottom: 1rem;
+  }
+
+  &__link{
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 1rem;
+  }
+}

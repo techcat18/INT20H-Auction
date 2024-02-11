@@ -1,0 +1,72 @@
+<form
+  [formGroup]="loginForm"
+  (ngSubmit)="onSubmit()"
+  class="login-container"
+>
+  <label
+    for="email"
+    class="login-container__label"
+  >
+    Enter your email*
+  </label>
+  <input
+    id="email"
+    type="text"
+    class="login-container__email"
+    formControlName="email"
+  >
+
+  <div
+    class="login-container__error"
+    *ngIf="submitted && email!.errors"
+  >
+    <div
+      *ngIf="email!.errors['required']"
+    >
+      This field is required
+    </div>
+    <div
+      *ngIf="email!.errors['email']"
+    >
+      Must be a valid email
+    </div>
+  </div>
+
+  <label
+    for="password"
+    class="login-container__label"
+  >
+    Enter your password*
+  </label>
+  <input
+    id="password"
+    type="password"
+    class="login-container__password"
+    formControlName="password"
+  >
+
+  <div
+    class="login-container__error"
+    *ngIf="submitted && password!.errors"
+  >
+    <div
+      *ngIf="password!.errors['required']"
+    >
+      This field is required
+    </div>
+  </div>
+
+  <button
+    class="login-container__submit-btn"
+    type="submit"
+  >
+    Login
+  </button>
+
+  <a
+    class="login-container__link"
+    routerLink="/auth/signup"
+  >
+    Already have an account?
+  </a>
+</form>
