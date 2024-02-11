@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { LotService } from '../../lot.service';
 import { LotDto } from 'src/app/models/lot';
+import { LotService } from '../../data-access/lot.service';
 
 @Component({
   selector: 'app-lot-list',

@@ -1,0 +1,147 @@
+<form
+  [formGroup]="signupForm"
+  (ngSubmit)="onSubmit()"
+  class="signup-container"
+>
+  <label
+    for="userName"
+    class="signup-container__label"
+  >
+    Enter your name*
+  </label>
+  <input
+    id="userName"
+    type="text"
+    class="signup-container__userName"
+    formControlName="userName"
+  >
+
+  <div
+    class="signup-container__error"
+    *ngIf="submitted && userName!.errors"
+  >
+    <div
+      *ngIf="userName!.errors['required']"
+    >
+      This field is required
+    </div>
+  </div>
+
+  <label
+    for="email"
+    class="signup-container__label"
+  >
+    Enter your email*
+  </label>
+  <input
+    id="email"
+    type="text"
+    class="signup-container__email"
+    formControlName="email"
+  >
+
+  <div
+    class="signup-container__error"
+    *ngIf="submitted && email!.errors"
+  >
+    <div
+      *ngIf="email!.errors['required']"
+    >
+      This field is required
+    </div>
+    <div
+      *ngIf="email!.errors['email']"
+    >
+      Must be a valid email
+    </div>
+  </div>
+
+  <label
+    for="email"
+    class="signup-container__label"
+  >
+    Enter your home page
+  </label>
+
+  <input
+    id="homePage"
+    type="text"
+    class="signup-container__homePage"
+    formControlName="homePage"
+  >
+
+  <div
+    class="signup-container__error"
+    *ngIf="submitted && homePage!.errors"
+  >
+    <div
+      *ngIf="homePage!.errors['pattern']"
+    >
+      Must be a valid URL
+    </div>
+  </div>
+
+  <label
+    for="password"
+    class="signup-container__label"
+  >
+    Enter your password*
+  </label>
+
+  <input
+    id="password"
+    type="password"
+    class="signup-container__password"
+    formControlName="password"
+  >
+
+  <div
+    class="signup-container__error"
+    *ngIf="submitted && password!.errors"
+  >
+    <div
+      *ngIf="password!.errors['required']"
+    >
+      This field is required
+    </div>
+  </div>
+
+  <label
+    for="confirmPassword"
+    class="signup-container__label"
+  >
+    Confirm your password*
+  </label>
+
+  <input
+    id="confirmPassword"
+    type="password"
+    class="signup-container__password"
+    formControlName="confirmPassword"
+  >
+
+  <div
+    class="signup-container__error"
+    *ngIf="submitted && confirmPassword!.errors"
+  >
+    <div
+      *ngIf="confirmPassword!.errors['required']"
+    >
+      This field is required
+    </div>
+  </div>
+
+  <div
+    class="signup-container__error"
+    *ngIf="submitted && passwordMismatch"
+  >
+    Passwords don't match
+  </div>
+
+  <button
+    class="signup-container__submit-btn"
+    type="submit"
+  >
+    Sign Up
+  </button>
+</form>
