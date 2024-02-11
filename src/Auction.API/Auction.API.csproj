@@ -17,7 +17,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Common\DTOs\Requests" />
       <Folder Include="Features\Auth" />
     </ItemGroup>
 

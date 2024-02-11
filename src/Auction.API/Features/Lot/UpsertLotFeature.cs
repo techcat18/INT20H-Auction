@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Auction.API.Features.Lot;
 
-public class PatchLotFeature
+public class UpsertLotFeature
 {
     internal sealed class Handler : IRequestHandler<UpsertLotCommand, LotDto>
     {

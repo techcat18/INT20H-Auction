@@ -7,6 +7,6 @@ public record CreateBidCommand : IRequest<BidDto>
 {
     public string UserId { get; set; }
     public decimal Amount { get; set; }
-    public DateTime TimeStamp { get; set; }
-    
+    public string LotId { get; set; }
+
 }
