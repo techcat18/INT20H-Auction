@@ -27,7 +27,6 @@ export class SignupComponent implements OnInit {
     this.signupForm = this.fb.group({
       userName: [null, [Validators.required]],
       email: [null, [Validators.required, Validators.email]],
-      homePage: [null, [Validators.pattern(this.urlPattern)]],
       password: [null, [Validators.required]],
       confirmPassword: [null, [Validators.required]]
     })
@@ -39,10 +38,6 @@ export class SignupComponent implements OnInit {
 
   get email(){
     return this.signupForm.get('email');
-  }
-
-  get homePage(){
-    return this.signupForm.get('homePage');
   }
 
   get password(){

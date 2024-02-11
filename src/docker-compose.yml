@@ -1,0 +1,22 @@
+version: '3.7'
+
+networks:
+  localdev:
+    name: localdev
+
+services:
+  backend:
+    container_name: 'auction-backend'
+    build: './'
+    ports:
+      - "7070:8080"
+    networks:
+      - localdev
+
+  frontend:
+    container_name: 'auction-frontend'
+    build: './auction.frontend'
+    ports:
+      - 8080:4200
+    networks:
+      - localdev

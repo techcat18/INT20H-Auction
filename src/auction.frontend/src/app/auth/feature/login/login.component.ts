@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
 
     const loginModel: LoginModel = this.loginForm.value;
     this.authService.login(loginModel).subscribe(l => {
-      this.router.navigateByUrl('/comments');
+      this.router.navigateByUrl('/lots');
     });
   }
 }

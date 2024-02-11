@@ -1,4 +1,5 @@
 ﻿using Auction.API.Common.DTOs;
+using Auction.API.Common.DTOs.Responses;
 using Auction.API.Domain.Entities;
 using Auction.API.Features.Bid.Commands;
 using AutoMapper;

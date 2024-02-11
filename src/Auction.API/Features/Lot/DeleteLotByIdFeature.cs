@@ -1,5 +1,6 @@
 ﻿using Auction.API.Common.Constants;
 using Auction.API.Common.DTOs;
+using Auction.API.Common.DTOs.Responses;
 using Auction.API.Data.Interfaces;
 using Auction.API.Features.Lot.Commands;
 using AutoMapper;
@@ -17,7 +18,7 @@ public class DeleteLotByIdFeature
         private readonly IMapper _mapper;
 
         public Handler(
-            ILotRepository lotRepository, 
+            ILotRepository lotRepository,
             IMapper mapper)
         {
             _lotRepository = lotRepository;

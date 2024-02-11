@@ -1,6 +1,7 @@
 using Auction.API.Common.Constants;
 using Auction.API.Common.DTOs;
 using Auction.API.Common.DTOs.Requests.Bid;
+using Auction.API.Common.DTOs.Responses;
 using Auction.API.Data.Interfaces;
 using Auction.API.Features.Bid.Commands;
 using AutoMapper;

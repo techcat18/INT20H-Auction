@@ -1,0 +1,13 @@
+<div class="dialog-container">
+  <mat-dialog-content>
+    <p>Enter amount</p>
+    <mat-form-field>
+      <input matInput [(ngModel)]="amount">
+    </mat-form-field>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Close</button>
+    <button mat-button (click)="onClick()">Confirm</button>
+  </mat-dialog-actions>
+</div>
+
