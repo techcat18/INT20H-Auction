@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using Auction.API.Common.Constants;
+using Newtonsoft.Json;
 
 namespace Auction.API.Domain.Entities;
 
@@ -18,4 +19,7 @@ public class Message : BaseEntity
     
     [JsonProperty("parentMessageId")]
     public string ParentMessageId { get; set; }
+
+    [JsonProperty("type")] 
+    public string Type { get; set; } = Constants.DbTypes.Message;
 }

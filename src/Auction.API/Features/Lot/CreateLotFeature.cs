@@ -2,6 +2,7 @@
 using Auction.API.Common.DTOs;
 using Auction.API.Common.DTOs.Responses;
 using Auction.API.Data.Interfaces;
+using Auction.API.Domain.Entities;
 using Auction.API.Features.Lot.Commands;
 using AutoMapper;
 using Carter;
@@ -15,14 +16,17 @@ public static class CreateLotFeature
     internal sealed class Handler : IRequestHandler<CreateLotCommand, LotDto>
     {
         private readonly ILotRepository _lotRepository;
+        private readonly IChatRepository _chatRepository;
         private readonly IMapper _mapper;
 
         public Handler(
             ILotRepository lotRepository, 
-            IMapper mapper)
+            IMapper mapper,
+            IChatRepository chatRepository)
         {
             _lotRepository = lotRepository;
             _mapper = mapper;
+            _chatRepository = chatRepository;
         }
 
         public async Task<LotDto> Handle(CreateLotCommand command, CancellationToken cancellationToken)
@@ -30,6 +34,8 @@ public static class CreateLotFeature
             var lot = _mapper.Map<Domain.Entities.Lot>(command);
 
             await _lotRepository.CreateAsync(lot, lot.Id, cancellationToken);
+            var chat = new Chat { LotId = lot.LotId };
+            await _chatRepository.CreateAsync(chat, chat.Id, cancellationToken);
 
             return _mapper.Map<LotDto>(lot);
         }
